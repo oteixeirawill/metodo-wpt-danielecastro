@@ -15,7 +15,7 @@ import {
   Heart,
   TrendingUp,
 } from "lucide-react";
-import heroImg from "@/assets/hero-woman.jpg";
+import heroImg from "@/assets/carrossel-seven-data-14.png.asset.json";
 import anatomyImg from "@/assets/anatomy.jpg";
 import beforeAfterImg from "@/assets/before-after.jpg";
 import expertImg from "@/assets/expert.jpg";
@@ -102,8 +102,8 @@ function Hero() {
         <div className="relative mt-8">
           <div className="overflow-hidden rounded-3xl border border-border/60 bg-card shadow-card">
             <img
-              src={heroImg}
-              alt="Mulher treinando em casa com mini band"
+              src={heroImg.url}
+              alt="Transformação real com o método"
               width={1200}
               height={1400}
               className="h-auto w-full object-cover"
