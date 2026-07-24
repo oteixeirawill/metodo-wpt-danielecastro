@@ -102,8 +102,8 @@ function Hero() {
         <div className="relative mt-8">
           <div className="overflow-hidden rounded-3xl border border-border/60 bg-card shadow-card">
             <img
-              src={heroImg}
-              alt="Mulher treinando em casa com mini band"
+              src={heroImg.url}
+              alt="Transformação real com o método"
               width={1200}
               height={1400}
               className="h-auto w-full object-cover"
