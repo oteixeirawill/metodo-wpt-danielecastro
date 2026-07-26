@@ -83,14 +83,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Descubra como ativar o transverso abdominal, o músculo que funciona como uma cinta natural. Método WPT em 15 minutos por dia, em casa.",
       },
-      { property: "og:title", content: "Woman Power Training" },
+      { property: "og:title", content: "Woman Power Training — Ative o músculo que muda seu abdômen" },
       {
         property: "og:description",
         content:
-          "O método que ensina mulheres a ativar o músculo esquecido do abdômen. 15 minutos por dia, em casa.",
+          "Descubra como ativar o transverso abdominal, o músculo que funciona como uma cinta natural. Método WPT em 15 minutos por dia, em casa.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Woman Power Training — Ative o músculo que muda seu abdômen" },
+      { name: "twitter:description", content: "Descubra como ativar o transverso abdominal, o músculo que funciona como uma cinta natural. Método WPT em 15 minutos por dia, em casa." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60b450f6-9323-437e-bfa8-6e9836ce9132/id-preview-2a69caa3--45e4bcb5-a8f3-453f-a12f-358f0b858562.lovable.app-1784864435021.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60b450f6-9323-437e-bfa8-6e9836ce9132/id-preview-2a69caa3--45e4bcb5-a8f3-453f-a12f-358f0b858562.lovable.app-1784864435021.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
