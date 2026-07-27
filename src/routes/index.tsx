@@ -719,45 +719,16 @@ function Mistakes() {
 }
 
 function Offer() {
-  const plans = [
-    {
-      name: "Essencial",
-      price: "R$ 147",
-      installments: "12x de R$ 14,50",
-      features: ["Programa de 12 semanas", "Vídeos de ativação", "Acesso 6 meses"],
-      featured: false,
-    },
-    {
-      name: "Completo",
-      price: "R$ 97",
-      installments: "12x de R$ 10,03",
-      badge: "Mais escolhido",
-      features: [
-        "Treinos de musculação (casa ou academia)",
-        "Aulas de Power HIIT",
-        "Foco exclusivo no abdômen",
-        "Alongamento guiado",
-        "Ciclo de carboidratos 5x2",
-        "Planner semanal",
-        "Semana do MAP",
-        "6 meses de acesso",
-        "Julia — agente de IA nutricional",
-      ],
-      original: "R$ 1.746",
-      featured: true,
-    },
-    {
-      name: "Premium",
-      price: "R$ 297",
-      installments: "12x de R$ 29,90",
-      features: [
-        "Tudo do Completo",
-        "Acompanhamento por 12 meses",
-        "Sessões ao vivo mensais",
-        "Grupo VIP no WhatsApp",
-      ],
-      featured: false,
-    },
+  const items = [
+    { name: "Treinos de Musculação", value: "R$ 397,00" },
+    { name: "Power HIIT", value: "R$ 197,00" },
+    { name: "Foco Abdômen", value: "R$ 297,00" },
+    { name: "Alongamento", value: "R$ 127,00" },
+    { name: "Ciclo 5x2", value: "R$ 197,00" },
+    { name: "Planner", value: "R$ 97,00" },
+    { name: "Semana MAP", value: "R$ 97,00" },
+    { name: "6 meses", value: "R$ 197,00" },
+    { name: "Júlia IA", value: "R$ 140,00" },
   ];
 
   return (
@@ -765,66 +736,51 @@ function Offer() {
       <div className="container-page">
         <SectionLabel>A oferta</SectionLabel>
         <H2>
-          <span className="mt-3 block">Escolha o plano e comece hoje.</span>
+          <span className="mt-3 block">Tudo que você recebe hoje.</span>
         </H2>
 
-        <div className="mt-10 space-y-5">
-          {plans.map((p) => (
-            <div
-              key={p.name}
-              className={
-                "relative rounded-3xl border p-6 shadow-soft " +
-                (p.featured
-                  ? "scale-[1.02] border-primary/40 bg-card shadow-card ring-1 ring-primary/20"
-                  : "border-border/60 bg-card/60 opacity-90")
-              }
-            >
-              {p.badge && (
-                <span className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-primary-foreground">
-                  {p.badge}
+        <div className="relative mt-10 rounded-[1.75rem] border border-primary/25 bg-card p-6 shadow-card ring-1 ring-primary/10 sm:p-8">
+          <span className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-primary-foreground">
+            Método WPT completo
+          </span>
+
+          <ul className="mt-3 divide-y divide-border/60">
+            {items.map((it) => (
+              <li key={it.name} className="flex items-center justify-between gap-4 py-3.5">
+                <span className="flex items-center gap-2.5 text-[15px] text-ink">
+                  <Check className="h-4 w-4 shrink-0 text-success" />
+                  {it.name}
                 </span>
-              )}
+                <span className="shrink-0 text-[13px] text-muted-foreground">{it.value}</span>
+              </li>
+            ))}
+          </ul>
 
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Plano {p.name}
-              </div>
+          <div className="mt-5 flex items-center justify-between rounded-2xl bg-muted/60 px-4 py-3.5">
+            <span className="text-[13px] uppercase tracking-[0.18em] text-muted-foreground">
+              Total
+            </span>
+            <span className="text-[16px] font-medium text-ink line-through">R$ 1.746,00</span>
+          </div>
 
-              <ul className="mt-5 space-y-2.5">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-[14px] text-ink">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 border-t border-border/60 pt-5">
-                {p.original && (
-                  <div className="text-xs text-muted-foreground line-through">
-                    De {p.original}
-                  </div>
-                )}
-                <div className="mt-1 flex items-baseline gap-2">
-                  <span className="font-display text-4xl text-ink">{p.price}</span>
-                  <span className="text-xs text-muted-foreground">à vista</span>
-                </div>
-                <div className="mt-1 text-xs text-muted-foreground">ou {p.installments}</div>
-
-                <a
-                  href="#"
-                  className={
-                    "mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-medium transition-all active:scale-[0.98] " +
-                    (p.featured
-                      ? "bg-ink text-primary-foreground hover:bg-primary"
-                      : "border border-ink/20 bg-transparent text-ink hover:bg-ink hover:text-primary-foreground")
-                  }
-                >
-                  Quero este plano
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
+          <div className="mt-8 text-center">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-primary">Hoje</div>
+            <div className="mt-3 font-display text-5xl leading-none text-ink">12x R$10,03</div>
+            <div className="mt-3 text-[14px] text-muted-foreground">
+              ou <span className="text-ink">R$97 à vista</span>.
             </div>
-          ))}
+
+            <a
+              href="#"
+              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:opacity-90 active:scale-[0.98]"
+            >
+              QUERO APRENDER AGORA
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Acesso imediato · 7 dias de garantia
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -951,23 +907,40 @@ function FAQ() {
 function FinalCTA() {
   return (
     <section className="bg-ink py-24 text-primary-foreground">
-      <div className="container-page text-center">
+      <div className="container-page">
         <Heart className="mx-auto h-6 w-6 text-primary" />
-        <h2 className="mt-6 font-display text-[2.25rem] leading-[1.05] tracking-tight sm:text-5xl">
-          Seu abdômen pode não precisar de{" "}
-          <em className="italic text-primary">mais exercícios</em>.
+        <h2 className="mt-6 text-center font-display text-[2.25rem] leading-[1.05] tracking-tight sm:text-5xl">
+          Agora você tem <em className="italic text-primary">duas opções</em>.
         </h2>
-        <p className="mt-5 text-[15px] leading-relaxed text-primary-foreground/70">
-          Talvez ele apenas nunca tenha aprendido a ativar o músculo certo.
-        </p>
+
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="rounded-[1.5rem] border border-primary-foreground/10 bg-primary-foreground/[0.03] p-6">
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/50">
+              <X className="h-3.5 w-3.5" /> Opção 01
+            </div>
+            <div className="mt-4 text-[18px] leading-snug text-primary-foreground/70">
+              Continuar treinando como sempre.
+            </div>
+          </div>
+
+          <div className="rounded-[1.5rem] border border-primary/40 bg-primary/10 p-6 ring-1 ring-primary/20">
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary">
+              <Check className="h-3.5 w-3.5" /> Opção 02
+            </div>
+            <div className="mt-4 font-display text-[26px] leading-tight">
+              Entrar para o WPT.
+            </div>
+          </div>
+        </div>
+
         <a
           href="#oferta"
-          className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:bg-primary/90 active:scale-[0.98]"
+          className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:opacity-90 active:scale-[0.98]"
         >
-          Quero começar agora
+          QUERO APRENDER AGORA
           <ArrowRight className="h-4 w-4" />
         </a>
-        <p className="mt-4 text-xs text-primary-foreground/50">
+        <p className="mt-4 text-center text-xs text-primary-foreground/50">
           7 dias de garantia · Acesso imediato
         </p>
       </div>
@@ -977,10 +950,29 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border/60 py-10 text-center">
+    <footer className="border-t border-border/60 py-12 text-center">
       <div className="container-page">
-        <div className="font-display text-2xl text-ink">Woman Power Training</div>
-        <p className="mt-3 text-xs text-muted-foreground">
+        <div className="font-display text-3xl tracking-tight text-ink">WPT</div>
+        <div className="mt-1 text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+          Woman Power Training
+        </div>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+          <a href="#" className="transition-colors hover:text-ink">
+            Termos de uso
+          </a>
+          <a href="#" className="transition-colors hover:text-ink">
+            Política de privacidade
+          </a>
+          <a href="#" className="transition-colors hover:text-ink">
+            Contato
+          </a>
+        </div>
+
+        <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">
+          Pagamento processado com segurança via Hotmart.
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground">
           © {new Date().getFullYear()} WPT · Todos os direitos reservados
         </p>
       </div>
