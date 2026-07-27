@@ -1000,6 +1000,7 @@ function LandingPage() {
   return (
     <main className="relative min-h-screen pb-24">
       <Hero />
+      <Story />
       <Identification />
       <BeliefBreak />
       <Discovery />
