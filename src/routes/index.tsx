@@ -293,13 +293,14 @@ function Discovery() {
   return (
     <section className="py-20">
       <div className="container-page">
-        <SectionLabel>A descoberta</SectionLabel>
+        <SectionLabel>O mecanismo</SectionLabel>
         <H2>
-          <span className="mt-3 block">
-            Existe um músculo profundo que funciona como uma{" "}
-            <em className="italic text-primary">cinta natural</em>.
-          </span>
+          <span className="mt-3 block">O Transverso Abdominal</span>
         </H2>
+        <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
+          Um músculo profundo que funciona como uma{" "}
+          <em className="italic text-primary">cinta natural</em>.
+        </p>
 
         <div className="mt-8 overflow-hidden rounded-3xl border border-border/60 bg-card shadow-card">
           <img
@@ -364,11 +365,29 @@ function Mechanism() {
   return (
     <section className="bg-ink py-20 text-primary-foreground">
       <div className="container-page">
-        <SectionLabel>O mecanismo</SectionLabel>
+        <SectionLabel>Antes e depois</SectionLabel>
         <h2 className="mt-3 font-display text-[2.25rem] leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl">
+          Isso ninguém te contou.
+        </h2>
+        <p className="mt-4 text-[16px] leading-relaxed text-primary-foreground/70">
           O que acontece quando esse músculo permanece{" "}
           <em className="italic text-primary">desligado</em>.
-        </h2>
+        </p>
+
+        <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-primary-foreground/10">
+          <img
+            src={beforeAfterImg}
+            alt="Mesma mulher: abdômen desativado à esquerda, ativado à direita"
+            width={1408}
+            height={1008}
+            loading="lazy"
+            className="h-auto w-full"
+          />
+          <div className="grid grid-cols-2 divide-x divide-primary-foreground/10 border-t border-primary-foreground/10 text-center text-[11px] uppercase tracking-[0.18em] text-primary-foreground/60">
+            <div className="py-3">Abdômen desativado</div>
+            <div className="py-3 text-primary">Abdômen ativado</div>
+          </div>
+        </div>
 
         <div className="mt-10 space-y-8">
           <FlowColumn title="Hoje" tone="down" items={before} />
@@ -460,12 +479,46 @@ function HowItWorks() {
         <SectionLabel>Como funciona</SectionLabel>
         <H2>
           <span className="mt-3 block">
-            Foi exatamente para ativar esse músculo que criamos o{" "}
-            <em className="italic text-primary">Woman Power Training</em>.
+            Como o Método WPT faz seu corpo responder ao treino em{" "}
+            <em className="italic text-primary">3 passos</em>.
           </span>
         </H2>
 
-        <div className="mt-8 grid grid-cols-2 gap-3">
+        <div className="mt-8 space-y-4">
+          {[
+            {
+              n: "01",
+              icon: <Sparkles className="h-5 w-5" />,
+              t: "Aprenda o WPT",
+              d: "Você aprende a ativar o transverso abdominal com aulas guiadas de respiração, bracing e ativação neuromuscular.",
+            },
+            {
+              n: "02",
+              icon: <Dumbbell className="h-5 w-5" />,
+              t: "Treine com abdômen ativado",
+              d: "Com o músculo profundo ligado, cada treino passa a recrutar o core corretamente — em casa ou na academia.",
+            },
+            {
+              n: "03",
+              icon: <TrendingUp className="h-5 w-5" />,
+              t: "Potencialize os resultados",
+              d: "Postura, estabilidade e eficiência aumentam. O abdômen fica mais firme e o corpo responde ao treino.",
+            },
+          ].map((s) => (
+            <Card key={s.n} className="p-6">
+              <div className="flex items-center justify-between">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-primary">
+                  {s.icon}
+                </div>
+                <span className="font-display text-3xl text-primary/25">{s.n}</span>
+              </div>
+              <div className="mt-5 text-[17px] font-medium text-ink">{s.t}</div>
+              <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{s.d}</p>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-6 grid grid-cols-2 gap-3">
           {cards.map((c) => (
             <Card key={c.title} className="p-4">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-primary">
@@ -565,37 +618,50 @@ function SocialProof() {
   const quotes = [
     {
       name: "Adriana, 38",
+      photo: depo1,
       text: "Treinava há anos com alimentação controlada e a barriga continuava para frente. Em poucas semanas a cintura afinou e a saia PP começou a servir.",
     },
     {
       name: "Camila, 32",
+      photo: depo2,
       text: "Depois do parto, achei que nunca mais teria abdômen firme. Aprender a ativar mudou tudo — em 6 semanas já sentia diferença na postura.",
     },
     {
       name: "Renata, 44",
+      photo: depo3,
       text: "Fazia abdominal todo dia e só sentia o pescoço. Aqui aprendi o básico que ninguém tinha me ensinado.",
     },
   ];
   return (
     <section className="bg-muted/40 py-20">
       <div className="container-page">
-        <SectionLabel>Provas sociais</SectionLabel>
+        <SectionLabel>Resultados</SectionLabel>
         <H2>
           <span className="mt-3 block">Mais de 7.000 mulheres já aplicaram o método.</span>
         </H2>
 
-        <div className="mt-8 space-y-3">
+        <div className="mt-8 space-y-4">
           {quotes.map((q) => (
-            <Card key={q.name}>
-              <div className="flex gap-0.5 text-primary">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                ))}
+            <Card key={q.name} className="p-6">
+              <div className="flex items-center gap-4">
+                <img
+                  src={q.photo}
+                  alt={q.name}
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  className="h-14 w-14 rounded-full object-cover"
+                />
+                <div>
+                  <div className="text-[15px] font-medium text-ink">{q.name}</div>
+                  <div className="mt-1 flex gap-0.5 text-primary">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                    ))}
+                  </div>
+                </div>
               </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-ink">"{q.text}"</p>
-              <p className="mt-3 text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                {q.name}
-              </p>
+              <p className="mt-4 text-[15px] leading-relaxed text-ink">"{q.text}"</p>
             </Card>
           ))}
         </div>
