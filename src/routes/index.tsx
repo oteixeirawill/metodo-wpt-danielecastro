@@ -19,6 +19,10 @@ import heroImg from "@/assets/carrossel-seven-data-14.png.asset.json";
 import anatomyImg from "@/assets/anatomy.jpg";
 import beforeAfterImg from "@/assets/before-after.jpg";
 import expertImg from "@/assets/expert.jpg";
+import adrianaImg from "@/assets/adriana.jpg";
+import depo1 from "@/assets/depo-1.jpg";
+import depo2 from "@/assets/depo-2.jpg";
+import depo3 from "@/assets/depo-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -80,27 +84,25 @@ function Card({
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-10 pb-16">
+    <section className="relative overflow-hidden pt-12 pb-20">
       <div className="grain-bg absolute inset-0 -z-10 opacity-70" />
       <div className="container-page">
-        <div className="mb-6 flex items-center justify-center">
-          <span className="rounded-full border border-border bg-card px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        <div className="mb-8 flex items-center justify-center">
+          <span className="rounded-full border border-border bg-card px-3.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
             Woman Power Training
           </span>
         </div>
 
-        <h1 className="font-display text-[2.5rem] leading-[1.02] tracking-tight text-ink sm:text-6xl">
-          Existe um músculo escondido na sua barriga que provavelmente{" "}
-          <em className="italic text-primary">nunca foi ativado</em>.
+        <h1 className="font-display text-[2.35rem] leading-[1.05] tracking-tight text-ink sm:text-[3.4rem]">
+          A maioria das mulheres aprende a treinar pernas, glúteos e braços.
+          <span className="mt-4 block">
+            Mas existe um músculo na sua barriga que{" "}
+            <em className="italic text-primary">ninguém te ensinou</em>.
+          </span>
         </h1>
 
-        <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground sm:text-lg">
-          Quando ele permanece desligado, o abdômen continua projetado —
-          mesmo após emagrecer, fazer musculação e centenas de abdominais.
-        </p>
-
-        <div className="relative mt-8">
-          <div className="overflow-hidden rounded-3xl border border-border/60 bg-card shadow-card">
+        <div className="relative mt-10">
+          <div className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-card shadow-card">
             <img
               src={heroImg.url}
               alt="Transformação real com o método"
@@ -119,11 +121,74 @@ function Hero() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <CTA>Quero descobrir como ativar esse músculo</CTA>
-          <p className="mt-3 text-center text-xs text-muted-foreground">
-            +7.000 mulheres já aplicaram o método
-          </p>
+        <p className="mt-9 text-[17px] leading-relaxed text-ink sm:text-xl">
+          Quando ele está adormecido, nenhum treino vai entregar o resultado que você merece.
+        </p>
+
+        <div className="mt-8 flex items-center justify-center gap-2.5 rounded-full border border-border/70 bg-card px-4 py-3 shadow-soft">
+          <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+          <span className="text-[13px] font-medium text-ink">
+            Mais de 7.000 mulheres já testaram e aprovaram.
+          </span>
+        </div>
+
+        <div className="mt-6">
+          <CTA>QUERO APRENDER AGORA</CTA>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Story() {
+  const lines = [
+    "Mãe de 3 filhas.",
+    "43 anos.",
+    "A saia PP ficou larga na cintura.",
+  ];
+  const body = [
+    "Adriana treinava há anos.",
+    "Musculação.",
+    "Cardio.",
+    "Alimentação controlada.",
+    "Mesmo assim a barriga continuava para frente.",
+    "Foi quando ela aprendeu a ativar corretamente o abdômen.",
+    "Em poucas semanas a cintura afinou.",
+    "A barriga começou a responder ao treino.",
+    "A saia PP ficou larga.",
+  ];
+  return (
+    <section className="bg-cream py-20">
+      <div className="container-page">
+        <SectionLabel>História real</SectionLabel>
+        <h2 className="mt-4 font-display text-[2.25rem] leading-[1.05] tracking-tight text-ink sm:text-5xl">
+          {lines.map((l) => (
+            <span key={l} className="block">
+              {l}
+            </span>
+          ))}
+        </h2>
+
+        <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-border/60 bg-card shadow-card">
+          <img
+            src={adrianaImg}
+            alt="Adriana, 43 anos, mãe de 3 filhas"
+            width={1200}
+            height={1408}
+            loading="lazy"
+            className="h-auto w-full object-cover"
+          />
+          <div className="p-4 text-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            Adriana · 43 anos
+          </div>
+        </div>
+
+        <div className="mt-8 space-y-2.5 border-l border-primary/25 pl-5">
+          {body.map((p) => (
+            <p key={p} className="text-[16px] leading-relaxed text-ink/80">
+              {p}
+            </p>
+          ))}
         </div>
       </div>
     </section>
@@ -153,14 +218,20 @@ function Identification() {
       <div className="container-page">
         <SectionLabel>Identificação</SectionLabel>
         <H2>
-          <span className="mt-3 block">Você se reconhece em alguma dessas situações?</span>
+          <span className="mt-3 block">Você se identifica?</span>
         </H2>
+        <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
+          Você reconhece alguma dessas situações?
+        </p>
 
-        <ul className="mt-8 space-y-3">
+        <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {items.map((t) => (
-            <li key={t} className="flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-4">
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent">
-                <Check className="h-3.5 w-3.5 text-primary" />
+            <li
+              key={t}
+              className="flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-5 shadow-soft"
+            >
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success/12">
+                <Check className="h-3.5 w-3.5 text-success" />
               </span>
               <span className="text-[15px] leading-snug text-ink">{t}</span>
             </li>
