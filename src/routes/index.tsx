@@ -907,9 +907,24 @@ function Footer() {
 }
 
 
+function MetaPixelNoScript() {
+  return (
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style={{ display: "none" }}
+        alt=""
+        src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+      />
+    </noscript>
+  );
+}
+
 function LandingPage() {
   return (
     <main className="relative min-h-screen pb-24">
+      <MetaPixelNoScript />
       <Hero />
       <Story />
       <Identification />
@@ -918,7 +933,7 @@ function LandingPage() {
       <Mechanism />
       <HowItWorks />
       <ForWhom />
-      
+
       <SocialProof />
       <Mistakes />
       <Offer />
@@ -927,7 +942,7 @@ function LandingPage() {
       <FAQ />
       <FinalCTA />
       <Footer />
-      
+
     </main>
   );
 }
