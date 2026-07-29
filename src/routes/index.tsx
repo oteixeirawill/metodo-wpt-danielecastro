@@ -357,11 +357,6 @@ function Mechanism() {
     "Mais eficiência nos exercícios",
     "Abdômen mais firme",
   ];
-  const tools = [
-    { name: "Bracing", desc: "contração ativa do core" },
-    { name: "Hipopressivos", desc: "trabalho respiratório e postural" },
-    { name: "Ativação neuromuscular", desc: "reconexão cérebro-músculo" },
-  ];
   return (
     <section className="bg-ink py-20 text-primary-foreground">
       <div className="container-page">
