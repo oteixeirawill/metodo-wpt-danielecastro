@@ -61,6 +61,11 @@ function CTA({ children, className = "" }: { children: React.ReactNode; classNam
   return (
     <a
       href="#oferta"
+      onClick={() => {
+        if (typeof window !== "undefined") {
+          (window as any).fbq?.("track", "Lead");
+        }
+      }}
       className={
         "group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:bg-primary active:scale-[0.98] " +
         className
