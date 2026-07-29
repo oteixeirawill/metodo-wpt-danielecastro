@@ -24,8 +24,18 @@ import depo1 from "@/assets/depo-1.jpg";
 import depo2 from "@/assets/depo-2.jpg";
 import depo3 from "@/assets/depo-3.jpg";
 
+const META_PIXEL_ID = "1493161365645099";
+
 export const Route = createFileRoute("/")({
   component: LandingPage,
+  head: () => ({
+    scripts: [
+      {
+        type: "text/javascript",
+        children: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`,
+      },
+    ],
+  }),
 });
 
 /* ---------- Reusable primitives ---------- */
@@ -51,6 +61,11 @@ function CTA({ children, className = "" }: { children: React.ReactNode; classNam
   return (
     <a
       href="#oferta"
+      onClick={() => {
+        if (typeof window !== "undefined") {
+          (window as any).fbq?.("track", "Lead");
+        }
+      }}
       className={
         "group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:bg-primary active:scale-[0.98] " +
         className
@@ -892,9 +907,24 @@ function Footer() {
 }
 
 
+function MetaPixelNoScript() {
+  return (
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style={{ display: "none" }}
+        alt=""
+        src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+      />
+    </noscript>
+  );
+}
+
 function LandingPage() {
   return (
     <main className="relative min-h-screen pb-24">
+      <MetaPixelNoScript />
       <Hero />
       <Story />
       <Identification />
@@ -903,7 +933,7 @@ function LandingPage() {
       <Mechanism />
       <HowItWorks />
       <ForWhom />
-      
+
       <SocialProof />
       <Mistakes />
       <Offer />
@@ -912,7 +942,7 @@ function LandingPage() {
       <FAQ />
       <FinalCTA />
       <Footer />
-      
+
     </main>
   );
 }
