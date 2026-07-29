@@ -465,14 +465,6 @@ function FlowColumn({
 }
 
 function HowItWorks() {
-  const cards = [
-    { icon: <Clock className="h-4 w-4" />, title: "12 semanas", desc: "programa completo" },
-    { icon: <Sparkles className="h-4 w-4" />, title: "Vídeos", desc: "aulas guiadas passo a passo" },
-    { icon: <Home className="h-4 w-4" />, title: "Em casa", desc: "sem depender de academia" },
-    { icon: <Zap className="h-4 w-4" />, title: "15 minutos", desc: "sessões curtas e diárias" },
-    { icon: <Dumbbell className="h-4 w-4" />, title: "Mini band", desc: "único equipamento" },
-    { icon: <TrendingUp className="h-4 w-4" />, title: "Progressão", desc: "avanço semanal" },
-  ];
   return (
     <section className="py-20">
       <div className="container-page">
