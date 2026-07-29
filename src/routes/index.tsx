@@ -518,17 +518,6 @@ function HowItWorks() {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-3">
-          {cards.map((c) => (
-            <Card key={c.title} className="p-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-primary">
-                {c.icon}
-              </div>
-              <div className="mt-3 text-[15px] font-medium text-ink">{c.title}</div>
-              <div className="mt-0.5 text-xs text-muted-foreground">{c.desc}</div>
-            </Card>
-          ))}
-        </div>
       </div>
     </section>
   );
