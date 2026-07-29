@@ -567,52 +567,6 @@ function ForWhom() {
   );
 }
 
-function LogicalProofs() {
-  const items = [
-    { n: "01", t: "Anatomia", d: "As 4 camadas do abdômen e o papel do transverso." },
-    { n: "02", t: "Estudos", d: "Evidências sobre ativação profunda e estabilidade lombopélvica." },
-    { n: "03", t: "Biomecânica", d: "Como cada movimento depende do core profundo." },
-    { n: "04", t: "Infográficos", d: "Postura, respiração e pressão intra-abdominal." },
-  ];
-  return (
-    <section className="py-20">
-      <div className="container-page">
-        <SectionLabel>Provas lógicas</SectionLabel>
-        <H2>
-          <span className="mt-3 block">
-            Antes de mostrar resultados, mostramos <em className="italic text-primary">o porquê</em>.
-          </span>
-        </H2>
-
-        <div className="mt-8 space-y-3">
-          {items.map((i) => (
-            <Card key={i.n} className="flex items-start gap-4">
-              <span className="font-display text-3xl leading-none text-primary/70">{i.n}</span>
-              <div>
-                <div className="text-[15px] font-medium text-ink">{i.t}</div>
-                <div className="mt-1 text-sm leading-snug text-muted-foreground">{i.d}</div>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-8 overflow-hidden rounded-3xl border border-border/60 bg-card shadow-card">
-          <img
-            src={beforeAfterImg}
-            alt="Antes e depois da ativação do transverso abdominal"
-            width={1408}
-            height={1008}
-            loading="lazy"
-            className="h-auto w-full"
-          />
-          <div className="p-4 text-center text-xs text-muted-foreground">
-            Mesma mulher — abdômen desativado à esquerda, ativado à direita.
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function SocialProof() {
   const quotes = [
