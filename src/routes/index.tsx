@@ -980,21 +980,6 @@ function Footer() {
   );
 }
 
-function StickyCTA() {
-  return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 pb-3">
-      <div className="container-page pointer-events-auto">
-        <a
-          href="#oferta"
-          className="flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[14px] font-medium text-primary-foreground shadow-card transition-all hover:bg-primary active:scale-[0.98]"
-        >
-          Quero começar agora
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
-    </div>
-  );
-}
 
 function LandingPage() {
   return (
