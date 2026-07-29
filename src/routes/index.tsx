@@ -946,7 +946,7 @@ function LandingPage() {
       <Mechanism />
       <HowItWorks />
       <ForWhom />
-      <LogicalProofs />
+      
       <SocialProof />
       <Mistakes />
       <Offer />
