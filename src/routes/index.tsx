@@ -401,25 +401,6 @@ function Mechanism() {
           <FlowColumn title="Depois" tone="up" items={after} />
         </div>
 
-        <div className="mt-12">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-primary-foreground/60">
-            Três ferramentas ensinadas
-          </p>
-          <div className="mt-4 space-y-3">
-            {tools.map((t) => (
-              <div
-                key={t.name}
-                className="flex items-start gap-3 rounded-2xl border border-primary-foreground/10 bg-primary-foreground/[0.04] p-4"
-              >
-                <Sparkles className="mt-0.5 h-4 w-4 text-primary" />
-                <div>
-                  <div className="text-[15px] font-medium">{t.name}</div>
-                  <div className="text-xs text-primary-foreground/60">{t.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
