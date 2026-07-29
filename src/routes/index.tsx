@@ -357,11 +357,6 @@ function Mechanism() {
     "Mais eficiência nos exercícios",
     "Abdômen mais firme",
   ];
-  const tools = [
-    { name: "Bracing", desc: "contração ativa do core" },
-    { name: "Hipopressivos", desc: "trabalho respiratório e postural" },
-    { name: "Ativação neuromuscular", desc: "reconexão cérebro-músculo" },
-  ];
   return (
     <section className="bg-ink py-20 text-primary-foreground">
       <div className="container-page">
@@ -401,25 +396,6 @@ function Mechanism() {
           <FlowColumn title="Depois" tone="up" items={after} />
         </div>
 
-        <div className="mt-12">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-primary-foreground/60">
-            Três ferramentas ensinadas
-          </p>
-          <div className="mt-4 space-y-3">
-            {tools.map((t) => (
-              <div
-                key={t.name}
-                className="flex items-start gap-3 rounded-2xl border border-primary-foreground/10 bg-primary-foreground/[0.04] p-4"
-              >
-                <Sparkles className="mt-0.5 h-4 w-4 text-primary" />
-                <div>
-                  <div className="text-[15px] font-medium">{t.name}</div>
-                  <div className="text-xs text-primary-foreground/60">{t.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -465,14 +441,6 @@ function FlowColumn({
 }
 
 function HowItWorks() {
-  const cards = [
-    { icon: <Clock className="h-4 w-4" />, title: "12 semanas", desc: "programa completo" },
-    { icon: <Sparkles className="h-4 w-4" />, title: "Vídeos", desc: "aulas guiadas passo a passo" },
-    { icon: <Home className="h-4 w-4" />, title: "Em casa", desc: "sem depender de academia" },
-    { icon: <Zap className="h-4 w-4" />, title: "15 minutos", desc: "sessões curtas e diárias" },
-    { icon: <Dumbbell className="h-4 w-4" />, title: "Mini band", desc: "único equipamento" },
-    { icon: <TrendingUp className="h-4 w-4" />, title: "Progressão", desc: "avanço semanal" },
-  ];
   return (
     <section className="py-20">
       <div className="container-page">
@@ -518,17 +486,6 @@ function HowItWorks() {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-3">
-          {cards.map((c) => (
-            <Card key={c.title} className="p-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-primary">
-                {c.icon}
-              </div>
-              <div className="mt-3 text-[15px] font-medium text-ink">{c.title}</div>
-              <div className="mt-0.5 text-xs text-muted-foreground">{c.desc}</div>
-            </Card>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -567,52 +524,6 @@ function ForWhom() {
   );
 }
 
-function LogicalProofs() {
-  const items = [
-    { n: "01", t: "Anatomia", d: "As 4 camadas do abdômen e o papel do transverso." },
-    { n: "02", t: "Estudos", d: "Evidências sobre ativação profunda e estabilidade lombopélvica." },
-    { n: "03", t: "Biomecânica", d: "Como cada movimento depende do core profundo." },
-    { n: "04", t: "Infográficos", d: "Postura, respiração e pressão intra-abdominal." },
-  ];
-  return (
-    <section className="py-20">
-      <div className="container-page">
-        <SectionLabel>Provas lógicas</SectionLabel>
-        <H2>
-          <span className="mt-3 block">
-            Antes de mostrar resultados, mostramos <em className="italic text-primary">o porquê</em>.
-          </span>
-        </H2>
-
-        <div className="mt-8 space-y-3">
-          {items.map((i) => (
-            <Card key={i.n} className="flex items-start gap-4">
-              <span className="font-display text-3xl leading-none text-primary/70">{i.n}</span>
-              <div>
-                <div className="text-[15px] font-medium text-ink">{i.t}</div>
-                <div className="mt-1 text-sm leading-snug text-muted-foreground">{i.d}</div>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-8 overflow-hidden rounded-3xl border border-border/60 bg-card shadow-card">
-          <img
-            src={beforeAfterImg}
-            alt="Antes e depois da ativação do transverso abdominal"
-            width={1408}
-            height={1008}
-            loading="lazy"
-            className="h-auto w-full"
-          />
-          <div className="p-4 text-center text-xs text-muted-foreground">
-            Mesma mulher — abdômen desativado à esquerda, ativado à direita.
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function SocialProof() {
   const quotes = [
@@ -980,21 +891,6 @@ function Footer() {
   );
 }
 
-function StickyCTA() {
-  return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 pb-3">
-      <div className="container-page pointer-events-auto">
-        <a
-          href="#oferta"
-          className="flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[14px] font-medium text-primary-foreground shadow-card transition-all hover:bg-primary active:scale-[0.98]"
-        >
-          Quero começar agora
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
-    </div>
-  );
-}
 
 function LandingPage() {
   return (
@@ -1007,7 +903,7 @@ function LandingPage() {
       <Mechanism />
       <HowItWorks />
       <ForWhom />
-      <LogicalProofs />
+      
       <SocialProof />
       <Mistakes />
       <Offer />
@@ -1016,7 +912,7 @@ function LandingPage() {
       <FAQ />
       <FinalCTA />
       <Footer />
-      <StickyCTA />
+      
     </main>
   );
 }
