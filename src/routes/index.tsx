@@ -1001,7 +1001,7 @@ function LandingPage() {
       <FAQ />
       <FinalCTA />
       <Footer />
-      <StickyCTA />
+      
     </main>
   );
 }
