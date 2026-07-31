@@ -15,11 +15,11 @@ import {
   Heart,
   TrendingUp,
 } from "lucide-react";
-import heroImg from "import heroImg from "@/assets/carrossel-seven-data-14.png";
+import heroImg from "@/assets/carrossel-seven-data-14.png.asset.json";
 import anatomyImg from "@/assets/anatomy.jpg";
 import beforeAfterImg from "@/assets/before-after.jpg";
 import expertImg from "@/assets/expert.jpg";
-import adrianaImg from "@/assets/adriana.png";
+import adrianaImg from "@/assets/adriana.jpg";
 import depo1 from "@/assets/depo-1.jpg";
 import depo2 from "@/assets/depo-2.jpg";
 import depo3 from "@/assets/depo-3.jpg";
