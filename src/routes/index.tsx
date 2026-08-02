@@ -4,7 +4,6 @@ import {
   Check,
   X,
   Clock,
-  Home,
   Dumbbell,
   ShieldCheck,
   Sparkles,
