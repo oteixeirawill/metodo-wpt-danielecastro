@@ -57,10 +57,18 @@ function H2({ children }: { children: React.ReactNode }) {
   );
 }
 
-function CTA({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function CTA({
+  children,
+  className = "",
+  href = "#oferta",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  href?: string;
+}) {
   return (
     <a
-      href="#oferta"
+      href={href}
       onClick={() => {
         if (typeof window !== "undefined") {
           (window as any).fbq?.("track", "Lead");
