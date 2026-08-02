@@ -233,7 +233,7 @@ function Identification() {
     "Parece que sua barriga está sempre relaxada",
   ];
   return (
-    <section className="py-20">
+    <section id="identificacao" className="py-20">
       <div className="container-page">
         <SectionLabel>Identificação</SectionLabel>
         <H2>
@@ -701,7 +701,8 @@ function Offer() {
             </div>
 
             <a
-              href="#"
+              href="https://go.hotmart.com/L105791169S?ap=bd98"
+              onClick={() => (window as any).fbq?.("track", "Lead")}
               className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:opacity-90 active:scale-[0.98]"
             >
               QUERO APRENDER AGORA
@@ -864,7 +865,8 @@ function FinalCTA() {
         </div>
 
         <a
-          href="#oferta"
+          href="https://go.hotmart.com/L105791169S?ap=bd98"
+          onClick={() => (window as any).fbq?.("track", "Lead")}
           className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-4 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:opacity-90 active:scale-[0.98]"
         >
           QUERO APRENDER AGORA
