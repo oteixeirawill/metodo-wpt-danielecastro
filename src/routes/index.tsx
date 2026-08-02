@@ -116,13 +116,13 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="font-display text-[2.35rem] leading-[1.05] tracking-tight text-ink sm:text-[3.4rem]">
+        <h1 className="text-center font-display text-[2.35rem] leading-[1.05] tracking-tight text-ink sm:text-[3.4rem]">
           A maioria das mulheres aprende a treinar pernas, glúteos e braços.
-          <span className="mt-4 block">
-            Mas existe um músculo na sua barriga que{" "}
-            <em className="italic text-primary">ninguém te ensinou</em>.
-          </span>
         </h1>
+        <p className="mt-5 text-center font-display text-[1.5rem] leading-snug text-ink sm:text-[2rem]">
+          Mas existe um músculo na sua barriga que{" "}
+          <em className="italic text-primary">ninguém te ensinou</em>.
+        </p>
 
         <div className="relative mt-10">
           <div className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-card shadow-card">
@@ -138,13 +138,9 @@ function Hero() {
           <div className="pointer-events-none absolute -left-2 top-6 flex flex-col gap-2">
             <FloatingChip icon={<Clock className="h-3.5 w-3.5" />} label="15 min / dia" />
           </div>
-          <div className="pointer-events-none absolute -right-2 bottom-6 flex flex-col items-end gap-2">
-            <FloatingChip icon={<Home className="h-3.5 w-3.5" />} label="Sem academia" />
-            <FloatingChip icon={<Dumbbell className="h-3.5 w-3.5" />} label="Mini band" />
-          </div>
         </div>
 
-        <p className="mt-9 text-[17px] leading-relaxed text-ink sm:text-xl">
+        <p className="mt-9 text-center text-[17px] leading-relaxed text-ink sm:text-xl">
           Quando ele está adormecido, nenhum treino vai entregar o resultado que você merece.
         </p>
 
@@ -156,7 +152,7 @@ function Hero() {
         </div>
 
         <div className="mt-6">
-          <CTA>QUERO APRENDER AGORA</CTA>
+          <CTA href="#identificacao">QUERO APRENDER AGORA</CTA>
         </div>
       </div>
     </section>
